@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Logotype } from '@components/logotype';
+import favIcon from 'src/assets/favIcon.svg';
 
 import {
    BurgerMenu,
@@ -57,9 +59,10 @@ export const Header = ({ isMainPage }: HeaderProps) => {
                   Favorites
                </BurgerMenuLink>
             </BurgerMenu>
+            <Logotype color='white' onClick={toggleMenu} />
             {isMainPage ? (
                <Favorites onClick={() => navigate('/favorites', { replace: false })}>
-                  <FavoritesIcon alt='iconFavorites' src='' />
+                  <FavoritesIcon alt='iconFavorites' src={favIcon} />
                   <FavoritesText>Your favorites</FavoritesText>
                </Favorites>
             ) : (

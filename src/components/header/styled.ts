@@ -25,8 +25,8 @@ export const Wrapper = styled.div`
 export const FavoritesIcon = styled.img`
    position: relative;
    top: 5px;
-   width: 15px;
-   height: 19px;
+   width: 37px;
+   height: 42px;
    transition: 1s;
    &:hover {
       transform: scale(1.1);
