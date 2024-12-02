@@ -4,14 +4,14 @@ import { Loader } from '@components/loader';
 
 import { Card, CardImage } from './styled';
 
-export interface ArtCardProps {
+type ArtCardProps = {
    imageUrl: string;
    title: string;
    artist_title: string;
    isLoading: boolean;
    id: number;
    onClick: () => void;
-}
+};
 
 export const ArtCard = ({
    imageUrl,

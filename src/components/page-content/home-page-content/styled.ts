@@ -27,6 +27,7 @@ export const Title = styled.div`
    font-weight: bold;
    line-height: 80px;
    text-align: center;
+
    span {
       font-weight: bold;
       color: ${colors.green};
@@ -84,6 +85,7 @@ export const SearchButton = styled.button<{
    top: 35px;
    cursor: pointer;
    transition: background 0.3s ease;
+
    &:hover {
       background-image: url(${({ backgroundImageGreen }) => backgroundImageGreen});
    }
@@ -103,5 +105,25 @@ export const Gallery = styled.div`
       grid-template-columns: repeat(1, 1fr);
       margin-bottom: 80px;
       gap: 10px;
+   }
+`;
+
+export const RecommendedContainer = styled.div`
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   width: 100%;
+   gap: 10px;
+   margin-bottom: 60px;
+`;
+
+export const EmptyList = styled.div`
+   text-align: center;
+   padding: 100px;
+   font-size: 16px;
+
+   @media (max-width: 760px) {
+      padding: 50px;
+      font-size: 16px;
    }
 `;

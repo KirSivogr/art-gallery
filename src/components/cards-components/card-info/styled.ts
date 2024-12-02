@@ -15,6 +15,8 @@ export const CardInformation = styled.div`
    left: 10px;
    z-index: 1;
    box-sizing: border-box;
+   border-radius: 5px;
+   box-shadow: 0 2px 2px ${colors.boxShadow};
 `;
 
 export const FavoriteIcon = styled.img`
@@ -33,10 +35,17 @@ export const Icon = styled.div<{ isFav: boolean }>`
    justify-content: center;
    align-items: center;
    border-radius: 50%;
-   background-color: ${({ isFav }) => (isFav ? `${colors.green}` : `${colors.white}`)};
+   background-color: ${({ isFav }) =>
+      isFav ? `${colors.lightGreen}` : `${colors.grey}`};
    width: 40px;
    height: 40px;
    cursor: pointer;
+   transition: 1s;
+
+   &:hover {
+      transform: scale(1.1);
+   }
+
    @media (max-width: 390px) {
       width: 15px;
       height: 15px;

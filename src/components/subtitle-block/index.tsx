@@ -7,10 +7,7 @@ type SubtitleBlockProps = {
    infoSubtitle: string;
 };
 
-export const SubtitleBlock: React.FC<SubtitleBlockProps> = ({
-   infoTitle,
-   infoSubtitle,
-}) => {
+export const SubtitleBlock = ({ infoTitle, infoSubtitle }: SubtitleBlockProps) => {
    return (
       <SubTitleBlock>
          <InfoTitle>{infoTitle}</InfoTitle>
