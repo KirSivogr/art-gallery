@@ -35,3 +35,6 @@
    ```
    Откройте браузер и перейдите по адресу http://localhost:3001/.
 
+Также вы можете открыть [deploy](https://art-gallery-lac-one.vercel.app/) проекта
+
+
