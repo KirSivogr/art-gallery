@@ -26,10 +26,8 @@
    cd art-gallery
    npm install
    ```
-
-2. Создайте файл .env на основе .env.default
-
-3. Запуск:
+   
+2. Запуск:
    ```
    npm start
    ```
