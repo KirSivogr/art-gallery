@@ -17,6 +17,8 @@ export const useFavorite = (id: number | undefined) => {
 
          setFavoritesItems(favorites);
          setIsFav(isFavInFavorites);
+      } else {
+         localStorage.setItem('favorites', JSON.stringify([]));
       }
    }, [id]);
 
@@ -41,8 +43,6 @@ export const useFavorite = (id: number | undefined) => {
                artist_title,
                imageUrl,
             } as ArtByIdWithImage;
-
-            console.log(newFavorite);
 
             favorites.push(newFavorite);
             setIsFav(true);
