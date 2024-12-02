@@ -15,6 +15,7 @@ export const LogoName = styled.div`
    align-self: end;
    padding: 5px;
    color: ${props => props.color};
+
    span {
       margin-left: 5px;
       font-weight: bold;
@@ -25,5 +26,5 @@ export const LogoName = styled.div`
 export const LogoImage = styled.img`
    width: 50px;
    height: 50px;
-   padding: 10px;
+   padding-top: 20px;
 `;
