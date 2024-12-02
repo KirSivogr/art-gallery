@@ -17,3 +17,5 @@ export interface ArtById extends Art {
 export interface ArtByIdWithImage extends ArtById {
    imageUrl: string;
 }
+
+export type SortType = 'A-Z' | 'Z-A' | 'latest' | 'newest' | '';
