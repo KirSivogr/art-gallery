@@ -2,7 +2,7 @@ export function useDebounce(this: any, func: (query: string) => void, delay: num
    // eslint-disable-next-line no-undef
    let timeoutId: NodeJS.Timeout;
 
-   return (this: any, args: string) => {
+   return function (this: any, args: string) {
       const context = this;
 
       clearTimeout(timeoutId);
