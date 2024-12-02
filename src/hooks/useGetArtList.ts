@@ -3,13 +3,13 @@ import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { getArtLists } from '@/api/api';
 import { ArtByIdWithImage } from '@/types/interfaces';
 
-interface UseFetchArtListProps {
+type UseFetchArtListProps = {
    artList: ArtByIdWithImage[];
    totalPages: number;
    isArtListLoading: boolean;
-   isError: boolean;
+   isArtListError: boolean;
    setArtList: Dispatch<SetStateAction<ArtByIdWithImage[]>>;
-}
+};
 
 export function useGetArtList(
    query: string | undefined,
@@ -17,7 +17,7 @@ export function useGetArtList(
 ): UseFetchArtListProps {
    const [artList, setArtList] = useState<ArtByIdWithImage[]>([]);
    const [isArtListLoading, setIsArtListLoading] = useState(false);
-   const [isError, setIsError] = useState(false);
+   const [isArtListError, setIsArtListError] = useState(false);
    const [totalPages, setTotalPages] = useState(0);
 
    useEffect(() => {
@@ -37,7 +37,7 @@ export function useGetArtList(
             setArtList(artsWithImages);
             setTotalPages(pagination.total_pages);
          } catch (error) {
-            setIsError(true);
+            setIsArtListError(true);
          } finally {
             setIsArtListLoading(false);
          }
@@ -46,5 +46,5 @@ export function useGetArtList(
       fetchArtList();
    }, [query, pageNumber]);
 
-   return { artList, isArtListLoading, isError, totalPages, setArtList };
+   return { artList, isArtListLoading, isArtListError, totalPages, setArtList };
 }
