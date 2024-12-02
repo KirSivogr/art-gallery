@@ -18,8 +18,3 @@ export const Wrapper = styled.div`
    width: 100%;
    background: ${colors.white};
 `;
-
-export const Modsen = styled.img`
-   width: 164px;
-   height: 60px;
-`;

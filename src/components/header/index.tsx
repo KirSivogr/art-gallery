@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Logotype } from '@components/logotype';
 import favIcon from 'src/assets/favIcon.svg';
+import homeIcon from 'src/assets/homeIcon.svg';
 
 import {
-   BurgerMenu,
-   BurgerMenuLink,
-   CloseButton,
    Container,
    Favorites,
    FavoritesIcon,
@@ -26,40 +24,13 @@ type HeaderProps = {
 export const Header = ({ isMainPage }: HeaderProps) => {
    const [isOpen, setIsOpen] = useState(false);
 
-   const toggleMenu = () => {
-      setIsOpen(!isOpen);
-   };
-
-   useEffect(() => {
-      function handleClickEscape(event: KeyboardEvent) {
-         if (event.key === 'Escape') {
-            setIsOpen(false);
-         }
-      }
-
-      document.addEventListener('keydown', handleClickEscape);
-
-      return () => {
-         document.removeEventListener('keydown', handleClickEscape);
-      };
-   }, [isOpen]);
-
    const navigate = useNavigate();
 
    return (
       <Wrapper>
          <Container>
             <Overlay open={isOpen} onClick={() => setIsOpen(false)} />
-            <BurgerMenu open={isOpen}>
-               <CloseButton onClick={toggleMenu}>X</CloseButton>
-               <BurgerMenuLink onClick={() => navigate('/', { replace: false })}>
-                  Home
-               </BurgerMenuLink>
-               <BurgerMenuLink onClick={() => navigate('/favorites', { replace: false })}>
-                  Favorites
-               </BurgerMenuLink>
-            </BurgerMenu>
-            <Logotype color='white' onClick={toggleMenu} />
+            <Logotype color='white' onClick={() => navigate('/', { replace: false })} />
             {isMainPage ? (
                <Favorites onClick={() => navigate('/favorites', { replace: false })}>
                   <FavoritesIcon alt='iconFavorites' src={favIcon} />
@@ -68,11 +39,11 @@ export const Header = ({ isMainPage }: HeaderProps) => {
             ) : (
                <Links>
                   <Home onClick={() => navigate('/', { replace: false })}>
-                     <HomeIcon alt='iconHome' src='' />
+                     <HomeIcon alt='iconHome' src={homeIcon} />
                      <HomeText>Home</HomeText>
                   </Home>
                   <Favorites onClick={() => navigate('/favorites', { replace: false })}>
-                     <FavoritesIcon alt='iconFavorites' src='' />
+                     <FavoritesIcon alt='iconFavorites' src={favIcon} />
                      <FavoritesText>Your favorites</FavoritesText>
                   </Favorites>
                </Links>
