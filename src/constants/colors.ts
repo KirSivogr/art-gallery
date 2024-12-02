@@ -1,7 +1,11 @@
 export const colors = {
-   gradient: 'linear-gradient(90deg, #343333 38.05%, #484848 69.22%, #282828 98.98%)',
+   gradient: '#504c4c',
    green: '#4AA851',
+   darkGreen: '#023020',
+   lightGreen: '#C7F6C7',
    primary: 'rgb(57, 57, 57)',
+   black: '#000',
    white: '#ffffff',
    grey: '#3939390d',
+   boxShadow: 'rgba(0, 0, 0, 0.2)',
 };
